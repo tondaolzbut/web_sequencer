@@ -1,0 +1,31 @@
+body{
+    background-color:grey;
+}
+button {
+    width: 200px;
+    height: 200px;
+    margin:auto;
+    margin-top: 15%;
+    background-image: url("buttons/clear_square.webp");
+    border: 0;
+    background-color:grey;
+    background-size: contain;
+}
+
+button:hover{
+    background-image: url("buttons/clear_square.webp");
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+button:active{
+    background-image: url("buttons/clear_lit_pressed_square.webp");
+}
+
+
+#sequencer{
+    display: block;
+    margin: auto;
+    width: 87%;
+}
