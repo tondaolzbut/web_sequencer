@@ -10,17 +10,20 @@ button {
     border: 0;
     background-color:grey;
     background-size: contain;
-}
-
-button:hover{
-    background-image: url("buttons/clear_square.webp");
-    background-size: 90%;
-    background-position: center;
     background-repeat: no-repeat;
 }
 
+button.pressed{
+    background-image: url("buttons/clear_lit_square.webp");
+}
+
+button:hover{
+    background-size: 90%;
+    background-position: center;
+}
+
 button:active{
-    background-image: url("buttons/clear_lit_pressed_square.webp");
+    background-image: url("buttons/clear_pressed_square.webp");
 }
 
 
