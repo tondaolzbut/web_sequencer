@@ -1,7 +1,7 @@
 body{
     background-color:grey;
 }
-button {
+.step-button {
     width: 200px;
     height: 200px;
     margin:auto;
@@ -14,7 +14,7 @@ button {
 }
 
 button.pressed{
-    background-image: url("buttons/clear_lit_square.webp");
+    background-image: url("buttons/clear_pressed_square.webp");
 }
 
 button:hover{
@@ -22,10 +22,19 @@ button:hover{
     background-position: center;
 }
 
-button:active{
-    background-image: url("buttons/clear_pressed_square.webp");
+button.active{
+    background-image: url("buttons/clear_lit_square.webp");
 }
 
+#controls button {
+  padding: 10px 20px;
+  margin: 20px;
+  font-size: 16px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
 #sequencer{
     display: block;

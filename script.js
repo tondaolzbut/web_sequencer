@@ -17,24 +17,22 @@ class Sequencer{
     }
   }
   nextStep(){ 
-    if (this.activeStep > this.stepCount -2){
-      this.activeStep = 0;
-    }
-    else{
-      this.activeStep += 1;
-    }
-  }
-  start(){
-    this.isPlaying = true
-    while (this.isPlaying){
+    this.activeStep = (this.activeStep + 1) % this.stepCount;}
+
+  start() {
+    this.isPlaying = true;
+    this.interval = setInterval(() => {
       this.steps[this.activeStep].play();
       this.nextStep();
-    }
+    }, (60 / this.tempo) * 1000); // tempo in BPM
   }
-  stop(){
-    this.isPlaying = false
+
+  stop() {
+    this.isPlaying = false;
+    clearInterval(this.interval);
   }
 }
+
 class Step{
   index;
   pitch;
@@ -42,15 +40,26 @@ class Step{
   velocity;
   isActive = false;
   Sample;
-  constructor(index){
+  constructor(index) {
     this.index = index;
+    this.el = document.querySelector(`#step${index + 1}`);
   }
-  play(){
-    alert("playing step "+this.index);
+  play() {
+    this.el.classList.add("active");
+    setTimeout(() => this.el.classList.remove("active"), 100); // visual flash
   }
-  clear(){}
-  put(){}
-  modify(){}
+  clear()
+  {
+
+  }
+  put()
+  {
+
+  }
+  modify()
+  {
+
+  }
 }
 class Sample{
   source;
@@ -60,5 +69,10 @@ class Track{
   isMuted;
 }
 
-seq = new Sequencer(8);
-seq.start();
+const seq = new Sequencer(8);
+const startStopBtn = document.getElementById("start_stop");
+
+startStopBtn.addEventListener("click", () => {
+  if (!seq.isPlaying) { seq.start(); } 
+  else { seq.stop(); }
+});
