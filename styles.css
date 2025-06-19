@@ -1,19 +1,19 @@
 body{
-    background-color:grey;
+    background-color:black;
 }
 .step-button {
-    width: 200px;
-    height: 200px;
+    width: 50px;
+    height: 50px;
     margin:auto;
-    margin-top: 15%;
+    margin-bottom: 5vh;
     background-image: url("buttons/clear_square.webp");
     border: 0;
-    background-color:grey;
+    background-color:black;
     background-size: contain;
     background-repeat: no-repeat;
 }
 
-button.pressed{
+.step-button.pressed{
     background-image: url("buttons/clear_pressed_square.webp");
 }
 
@@ -22,7 +22,7 @@ button:hover{
     background-position: center;
 }
 
-button.active{
+.step-button.active{
     background-image: url("buttons/clear_lit_square.webp");
 }
 
@@ -36,8 +36,37 @@ button.active{
   cursor: pointer;
 }
 
+#gif-container {
+  height: 50vh; /* half the viewport height */
+  width: 100%;
+  overflow: hidden; /* in case gif is bigger */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black; /* optional, to frame the GIF */
+}
+
+#gif-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* or cover if you want to crop */
+}
+
 #sequencer{
     display: block;
     margin: auto;
-    width: 87%;
+    width: 95%;
+}
+
+#sequencer-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: auto;
+    width: fit-content;
+}
+
+.track-row {
+  display: flex;
+  gap: 4px;
 }
