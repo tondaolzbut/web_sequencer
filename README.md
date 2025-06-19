@@ -18,6 +18,8 @@ Open `index.html` in a browser.
 ## Roadmap
 - [x] Step buttons UI
 - [x] Sequencer logic
-- [ ] Audio playback
-- [ ] Timing with `AudioContext`
+- [x] Audio playback
+- [x] Timing with `AudioContext`
+- [ ] Add velocity, pitch, length
+- [ ] Upload custom samples
 - [ ] Save/load patterns
