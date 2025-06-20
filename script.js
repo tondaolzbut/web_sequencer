@@ -131,11 +131,26 @@ function createSequencerGrid(rows = 4, stepsPerRow = 8) {
   document.body.appendChild(container);
 }
 
-seqLength = 8;
+seqLength = 16;
 createSequencerGrid(4, seqLength);
 const seq = new Sequencer(seqLength);
 
 const startStopBtn = document.getElementById("start_stop");
+
+const tempoSlider = document.getElementById("tempo");
+const tempoValueDisplay = document.getElementById("tempo-value");
+
+tempoSlider.addEventListener("input", () => {
+  const bpm = parseInt(tempoSlider.value);
+  tempoValueDisplay.textContent = bpm;
+  seq.tempo = bpm*4;
+
+  // If playing, restart to apply new tempo immediately
+  if (seq.isPlaying) {
+    seq.stop();
+    seq.start();
+  }
+});
 
 startStopBtn.addEventListener("click", () => {
   if (!seq.isPlaying) { seq.start(); } 

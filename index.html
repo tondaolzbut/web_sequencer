@@ -18,11 +18,14 @@
         <![endif]-->
 
         <div id="gif-container">
-            <img src="visuals\womp_eye.gif" alt="Big cool GIF" />
+            <img src="visuals\devices.png" alt="Big cool GIF" />
         </div>
 
         <div id="controls">
             <button id="start_stop" type="button">Start / Stop</button>
+            <label for="tempo">Tempo (BPM):</label>
+            <input type="range" id="tempo" min="30" max="300" value="120">
+            <span id="tempo-value">120</span>
         </div>
         <div id="sequencer-grid"></div>
 

@@ -1,5 +1,8 @@
 body{
-    background-color:black;
+  background: linear-gradient(0deg, rgb(213, 121, 137), rgb(240, 178, 102));
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
 }
 .step-button {
     width: 50px;
@@ -8,9 +11,10 @@ body{
     margin-bottom: 5vh;
     background-image: url("buttons/clear_square.webp");
     border: 0;
-    background-color:black;
+    background-color: transparent;
     background-size: contain;
     background-repeat: no-repeat;
+    filter:opacity(70%);
 }
 
 .step-button.pressed{
@@ -24,6 +28,7 @@ button:hover{
 
 .step-button.active{
     background-image: url("buttons/clear_lit_square.webp");
+    filter:opacity(100%);
 }
 
 #controls button {
@@ -37,19 +42,22 @@ button:hover{
 }
 
 #gif-container {
-  height: 50vh; /* half the viewport height */
+  position: relative;
+  top: 0;
+  left: 0;
   width: 100%;
-  overflow: hidden; /* in case gif is bigger */
+  height: 40vh;
+  overflow: hidden;
   display: flex;
   justify-content: center;
-  align-items: center;
-  background-color: black; /* optional, to frame the GIF */
+  align-items: flex-start; /* align to the top inside the container */
 }
 
 #gif-container img {
-  width: 100%;
+  display: block;
   height: 100%;
-  object-fit: contain; /* or cover if you want to crop */
+  width: auto; /* allow it to be wider than viewport */
+  object-fit: contain;
 }
 
 #sequencer{
@@ -61,12 +69,12 @@ button:hover{
 #sequencer-grid {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 4px;
     margin: auto;
     width: fit-content;
 }
 
 .track-row {
   display: flex;
-  gap: 4px;
+  gap: 2px;
 }
