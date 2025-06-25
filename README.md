@@ -20,6 +20,8 @@ Open `index.html` in a browser.
 - [x] Sequencer logic
 - [x] Audio playback
 - [x] Timing with `AudioContext`
-- [ ] Add velocity, pitch, length
-- [ ] Upload custom samples
+- [x] Add velocity, pitch, length
+- [x] Upload custom samples
 - [ ] Save/load patterns
+- [ ] Visual overhaul
+- [ ] More intuitive controls
