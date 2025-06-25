@@ -5,30 +5,58 @@ body{
   overflow: hidden;
 }
 .step-button {
-    width: 50px;
-    height: 50px;
-    margin:auto;
-    margin-bottom: 5vh;
-    background-image: url("buttons/clear_square.webp");
-    border: 0;
-    background-color: transparent;
-    background-size: contain;
-    background-repeat: no-repeat;
-    filter:opacity(70%);
+  width: 50px;
+  height: 50px;
+  margin:auto;
+  margin-bottom: 5vh;
+  background-image: url("buttons/clear_square.webp");
+  border: 0;
+  background-color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter:opacity(70%);
+}
+
+.step-button:hover{
+  animation: wiggle 0.6s;
 }
 
 .step-button.pressed{
-    background-image: url("buttons/clear_pressed_square.webp");
+  background-image: url("buttons/clear_pressed_square.webp");
 }
 
 button:hover{
-    background-size: 90%;
-    background-position: center;
+  background-size: 90%;
+  background-position: center;
+}
+
+@keyframes wiggle {
+  0% {
+    transform: scale(1, 1);
+  }
+  15% {
+    transform: scale(1.25, 0.75);
+  }
+  30% {
+    transform: scale(0.75, 1.25);
+  }
+  45% {
+    transform: scale(1.15, 0.85);
+  }
+  60% {
+    transform: scale(0.95, 1.05);
+  }
+  75% {
+    transform: scale(1.05, 0.95);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
 }
 
 .step-button.active{
-    background-image: url("buttons/clear_lit_square.webp");
-    filter:opacity(100%);
+  background-image: url("buttons/clear_lit_square.webp");
+  filter:opacity(100%);
 }
 
 #controls button {
@@ -61,17 +89,17 @@ button:hover{
 }
 
 #sequencer{
-    display: block;
-    margin: auto;
-    width: 95%;
+  display: block;
+  margin: auto;
+  width: 95%;
 }
 
 #sequencer-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    margin: auto;
-    width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: auto;
+  width: fit-content;
 }
 
 .track-row {
